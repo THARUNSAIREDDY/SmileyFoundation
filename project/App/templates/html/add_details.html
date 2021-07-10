@@ -1,0 +1,34 @@
+{% extends 'html/header.html' %}
+{% block content %}
+<style>
+body {
+  background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg?size=626&ext=jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<div class="container">
+	<div class="row">
+
+		<div class="card center col-md-4  mx-auto my-3 shadow lg h-25">
+			<h3 class="p-3 bg-primary text-center text-white mt-3 border rounded">Add Details</h3>
+			<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% for n in e %}
+				<tr>
+					<td>{{n}}</td>
+				</tr>
+				{% endfor %}
+				<input type="submit" value="create" class="form-control my-2 col-sm btn btn-success">
+		</div>
+		
+				</td>
+			
+	
+</div>
+</div>
+</div>
+
+{% endblock %}

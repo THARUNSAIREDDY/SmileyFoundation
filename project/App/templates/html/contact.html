@@ -1,0 +1,131 @@
+{% extends 'html/header.html' %}
+{% block content %}
+{% load static %}
+<div class="bg-image" 
+      style="background-image: url('https://wallpapercave.com/wp/wp2857979.jpg');
+      height: 100%">
+      <title>Navigate to Us </title>
+
+<div class=" text-center text-light" >
+  <h1>Navigate To Us</h1>
+  
+</div>
+
+<div class="map-container">
+	
+
+	<div id="map-container-google" padding-bottom:75;
+    position:relative;
+    height:5;>
+
+      <iframe left:1; top:1; height="100%" width="100%" position:absolute; src="https://maps.google.com/maps?q=Banglore&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="1"
+        style="border:1" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+         <section id="contact">
+
+              <!-- Heading -->
+              <h2 class="mb-5 font-weight-bold text-center text-light">Contact us</h2>
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-lg-5 col-md-12">
+                      <!-- Form contact -->
+                      <form class="p-5 grey-text">
+                          <div class="md-form form-sm text-white"> 
+                            <label for="form3">Your name:</label>
+                              <input type="text" id="form3" class="form-control form-control-sm">
+                              
+                          </div>
+                          <div class="md-form form-sm text-white">
+                            <label for="form2">Your email:</label> 
+                              <input type="text" id="form2" class="form-control form-control-sm">
+                              
+                          </div>
+                          <div class="md-form form-sm text-white">
+                            <label for="form34">Subject:</label>
+                              <input type="text" id="form32" class="form-control form-control-sm">
+                              
+                          </div>
+                          <div class="md-form form-sm text-white"> 
+                            <label for="form8">Your message:</label>
+                              <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                              
+                          </div>
+                          <div class="text-center mt-4">
+                              <button class="btn btn-primary">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                          </div>
+                      </form>
+                      <!-- Form contact -->
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-7 col-md-12">
+
+                      <!--Grid row-->
+                      <div class="row text-center">
+
+                           <div class="col-lg-4 col-md-6 mb-3 text-light">
+<p>Follows Us On</p>
+ <a href="https://www.facebook.com/memoriesfor.you.5">
+<img border="0" alt="facebook" src="{% static 'images/download1.png' %}" width="50" height="50">
+</a>
+<a href="https://instagram.com/memoriesforyoupdtr?igshid=1jsc4iasvubxu">
+<img border="0" alt="gmail" src="{% static 'images/download.png' %}" width="50" height="50">
+</a>
+<a href="https://instagram.com/memoriesforyoupdtr?igshid=1jsc4iasvubxu">
+<img border="0" alt="instagram" src="{% static 'images/download2.png' %}" width="50" height="50">
+</a>
+                          </div>
+                          <!--Grid column-->
+                          <!--Grid column-->
+                          <div class="col-lg-4 col-md-12 mb-3 text-light">
+
+                              <p><i class=""></i>Smileyfoundation
+                                <br>Banglore<br> <br>
+                                smileyfoundation1@gmail.com<br>
+
+                                      6281302510</p>
+
+                          </div>
+                          <!--Grid column-->
+
+                          <!--Grid column-->
+                          <div class="col-lg-4 col-md-6 mb-3 text-light">
+
+                              <p><i class=""></i>Mon - Sat, 8:00 Am-10:00 Pm<br>
+                                Address:Smileyfoundation, <br>
+                                NGO,<br>
+                                Banglore,karnataka,<br>
+                              </p>
+
+                          </div>
+                          <!--Grid column-->
+
+                          <!--Grid column-->
+                       
+                      </div>
+                      <!--Grid row-->
+
+                      <!--Google map-->
+                      <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div>
+
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+          </section>
+          <!--Section: Contact-->
+
+
+
+
+
+{% endblock %}

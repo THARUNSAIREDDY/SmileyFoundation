@@ -1,0 +1,29 @@
+{% extends 'html/header.html' %}
+{% block title %}Worker Data{% endblock %}
+{% block content %}
+<div class="card col md-7">
+		<h3 class="p-3 bg-danger text-center text-light mt-3">workers details</h3>
+		<table class="table table-hover">
+			<tr class="bg-dark text-white">
+				<td> sno</td>
+				<td>Name</td>
+				<td>Profession</td>
+				<td>phoneno</td>
+				<td>Email</td>
+				<td>Gender</td>
+			</tr>
+			{% for i in wd %}
+			<tr>
+				<td>{{forloop.counter}}</td>
+				<td>{{i.name}}</td>
+				<td>{{i.profession}}</td>
+				<td>{{i.phno}}</td>
+				<td>{{i.Email}}</td>
+				<td>{{i.gender}}</td>
+
+				{% endfor %}
+		</table>
+	</div>
+	</div>
+</div>
+{% endblock %}

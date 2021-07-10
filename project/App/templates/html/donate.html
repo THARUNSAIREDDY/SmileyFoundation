@@ -1,0 +1,33 @@
+{% extends 'html/header.html' %}
+{% block content %}
+{% load static %}
+<html>
+<style>
+    .btn-1{
+        background-color: orangered;
+        padding: 0.7rem 1rem;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+	    <div class="row">
+	        <div class="row-md-5 my-2 mx-2">
+	            <img src="{% static 'images/ngoeducation.png' %}" width="1000" height="400">
+            </div>
+        </div>
+        <hr>
+        <h5 class="text-dark">A non-governmental organization (NGO) is a non-profit group that functions independently of any government. NGOs, sometimes called civil societies, are organized on community, national and international levels to serve a social or political goal such as humanitarian causes or the environment.</h5>
+	    <h5 class="text-dark">While "NGO" has various interpretations, the term is generally accepted to include non-profit, private organizations that operate outside of government control. Some NGOs rely primarily on volunteers, while others support a paid staff</h5>
+        <br>
+        <center>
+            <a href="{% url 'form' %}"><button class="btn-1">Donate</button></a>
+        </center>
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
