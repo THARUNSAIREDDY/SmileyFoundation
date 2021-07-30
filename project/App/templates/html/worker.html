@@ -1,0 +1,29 @@
+{% extends 'html/header.html' %}
+{% block content %}
+<style>
+body {
+  background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg?size=626&ext=jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<div class="container mt-5">
+	<div class="card mx-auto col-md6 shadow-lg">
+		<div class="card-body">
+			<h3 class="bg-info text-center text-light p-2 border rounded">Worker Deatils</h3>
+			<form method="POST">
+				{% csrf_token %}
+				{% for n in e %}
+				<tr>
+					<td>{{n}}</td>
+				</tr>
+				{% endfor %}
+				<input type="submit" value="Submit" class="btn btn-success">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

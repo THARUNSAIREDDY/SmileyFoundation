@@ -2,12 +2,20 @@
 {% block content %}
 {% load static %}
 <html>
-  
-<body class="background-color">
-  <div class="card-body mx-auto mt-9">
-
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </head>
     <style>
         /* Make the image fully responsive */
+        body {
+          color: #000;
+          overflow-x: hidden;
+          height: 100%;
+          background-image: linear-gradient(180deg, #ebcb71, #fff);
+          background-repeat: no-repeat
+      }
   
         .carousel-inner img {
           width: 100%;
@@ -50,14 +58,136 @@
         background-color:#BBD6EC;
     }        
     .modal-header {
-        background-color: #337AB7;
+        background-color: #eec963;
         padding:16px 16px;
         color:#FFF;
         border-bottom:2px dashed #337AB7;
      }
+     .btn-2{
+      background-color: rgb(185, 71, 238);
+      padding: 0.7rem 3rem;
+      width: 100%;
+      color: #fff;
+      border: none;
+  }
 
+
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem
+    }
+}
+
+@media (max-width:767.98px) {
+    .padding {
+        padding: 1rem
+    }
+}
+
+.padding {
+    padding: 5rem
+}
+
+.card {
+    position: relative;
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164)
+}
+
+.card .card-body {
+    padding: 1rem 1rem
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+p {
+    font-size: 0.875rem;
+    margin-bottom: .5rem;
+    line-height: 1.5rem
+}
+
+h4 {
+    line-height: .2 !important
+}
+
+.items {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 100px
+}
+
+.slick-slide {
+    margin: 10px
+}
+
+.media iframe,
+.media-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+    border-radius: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(120, 120, 120, .1);
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.media-content:before {
+    content: '';
+    position: absolute;
+    height: 10%;
+    width: 90%;
+    left: 5%;
+    bottom: 0;
+    background: inherit;
+    background-position-y: 100%;
+    filter: blur(10px)
+}
+
+.circle .media-content:before {
+    width: 40%;
+    left: 30%
+}
+
+.profile-image {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 11px !important;
+    border-top-right-radius: 11px
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 200
+}
           </style>
-         
+  <body> 
+    <br>
           <div id="demo" class="carousel slide " data-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
@@ -69,16 +199,19 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{% static 'images/logo1.png' %}" width="150%" height="100px">
+                <img style="border: 10px solid rgb(219, 176, 84);" src="{% static 'images/logo1.png' %}" width="150%" height="100px">
               </div>
               <div class="carousel-item">
-                <img src="{% static 'images/child.png' %}" width="150%" height="100px">
+                <img style="border: 10px solid rgb(224, 200, 92);" src="{% static 'images/ch8.jpeg' %}" width="150%" height="100px">
               </div>
               <div class="carousel-item">
-                <img src="{% static 'images/child3.png' %}" width="150%" height="100px">
+                <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/donate.jpeg' %}" width="150%" height="100px">
               </div>
               <div class="carousel-item">
-                <img src="{% static 'images/health.png' %}" width="150%" height="100px">
+                <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/hel2.jpeg' %}" width="150%" height="100px">
+              </div>
+              <div class="carousel-item">
+                <img style="border: 10px solid rgb(209, 181, 104);" src="{% static 'images/serve.jpeg' %}" width="150%" height="100px">
               </div>
               <!-- Left and right controls -->
               <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -90,112 +223,305 @@
             </div>
           </div>
     </div>
-      <div class="container">
-        <div class="row">
-          <div class="card">    
-                <h3>About Smiley Foundation</h3><br><br>
-                <p>Smile Foundation, an NGO for poor child education, is an NGO in India directly benefitting <br>
-                over 15,00,000 children and their families every year, through more than 400 live welfare <br>
-                projects on education, healthcare, livelihood and women empowerment, in over 2000 remote<br> 
-                villages and slums across 25 states of India.</p>
-
-                <p>Education is both the means as well as the end to a better life: the means because it empowers<br>
-                an individual to earn his/her livelihood and the end because it increases one's awareness on a <br>
-                range of issues – from healthcare to appropriate social behaviour to understanding one's rights <br>
-                – and in the process help him/her evolve as a better citizen.</p>
-            
-                <p>Doubtless, education is the most powerful catalyst for social transformation. But child education <br>
-                cannot be done in isolation. A child will go to school only if the family, particularly the mother,<br>
-                is assured of healthcare and empowered. Moreover, when an elder sibling is relevantly skilled to be<br>
-                employable and begins earning, the journey of empowerment continues beyond the present generation.</p>
-            </div>  
-            <br>
-          <div class="col-md-3"> 
-            <div class="bordered1">
-            <h2>Story of the Day</h2>
-            <img style="border:10px solid black;" class="img2" src="https://fthmb.tqn.com/6VwLjysKzyDgsVIeEE1l9v6meHw=/5120x3492/filters:fill(auto,1)/scientist-looking-through-microscope-487041749-58d5504a5f9b584683dc6de6.jpg" alt="Pineapple" width="220" height="220">
-              <p><h6>"Smile On Wheels doctors are helping villagers and urban slum dwellers in this hour of crisis. The doorstep healthcare unit of Smile Foundation is helping add a sigh of relief to their primary healthcare issues.</h6></p>
-              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more</button>
-            </div>
-          </div>    
-        </div>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
-                <h4 class="modal-title" id="myModalLabel">Read</h4>
-              </div>
-              <div class="modal-body">
-              <p>"Smile On Wheels doctors are helping villagers and urban slum <br>dwellers in this hour of crisis.
-                 The doorstep healthcare unit of<br> Smile Foundation is helping add a sigh of relief to their<br>
-                 primary healthcare issues.</p>
-
-              <p>Earlier the villagers were in great distress due to the lockdown. They were unable to get
-                 access to even basic medicines.<br> But with the start of operations much needed relief was <br>
-                 provided. Counseling for better mental health, door to door <br> check-ups are being conducted 
-                 regularly. We have to step<br> up. This is the time we can really help people by providing<br> 
-                 them with what they need the most-healthcare"</p>
+      <br>
+    <div class="container-fluid">      
+      <div class="row">
+          <div class="col-sm-9" >
+            <h3 style="color: orangered;"><center>About Smiley Foundation</center></h3><br>
               
-              <p>Dr. Sadan, Bilaspur.</p>
+                <p><h5>Smile Foundation, an NGO for poor child education, is an NGO in India directly benefitting 
+                over 15,00,000 children and their families every year, through more than 400 live welfare 
+                projects on education, healthcare, livelihood and women empowerment, in over 2000 remote
+                villages and slums across 25 states of India.</h5></p>
+  
+                <p><h5>Education is both the means as well as the end to a better life: the means because it empowers
+                an individual to earn his/her livelihood and the end because it increases one's awareness on a 
+                range of issues – from healthcare to appropriate social behaviour to understanding one's rights 
+                – and in the process help him/her evolve as a better citizen.</h5></p>
+            
+                <p><h5>Doubtless, education is the most powerful catalyst for social transformation. But child education 
+                cannot be done in isolation. A child will go to school only if the family, particularly the mother,
+                is assured of healthcare and empowered. Moreover, when an elder sibling is relevantly skilled to be
+                employable and begins earning, the journey of empowerment continues beyond the present generation.</h5></p>
+          </div>
+          <div class="col-sm-3" >
+            <h2 style="color: darkgreen;"><center>Story of the Day</center></h2>
+            <img style="border:10px solid black;" class="img2" src="{% static 'images/ch2.jpeg' %}" width="100%" height="55%">
+            <p><h6>"Smile On Wheels doctors are helping villagers and urban slum dwellers in this hour of crisis. The doorstep healthcare unit of Smile Foundation is helping add a sigh of relief to their primary healthcare issues.</h6></p>
+            <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more</button></center>
+          </div> 
+      </div>
+     </div>
+    <br><br>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <h4 class="modal-title" id="myModalLabel">Read</h4>
+          </div>
+          <div class="modal-body" style="background-color: rgb(255, 243, 191);">
+          <p>"Smile On Wheels doctors are helping villagers and urban slum <br>dwellers in this hour of crisis.
+             The doorstep healthcare unit of<br> Smile Foundation is helping add a sigh of relief to their<br>
+             primary healthcare issues.</p>
+  
+          <p>Earlier the villagers were in great distress due to the lockdown. They were unable to get
+             access to even basic medicines.<br> But with the start of operations much needed relief was <br>
+             provided. Counseling for better mental health, door to door <br> check-ups are being conducted 
+             regularly. We have to step<br> up. This is the time we can really help people by providing<br> 
+             them with what they need the most-healthcare"</p>
+          
+          <p>Dr. Sadan, Bilaspur.</p>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="background-color: rgb(255, 243, 191);">
           <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
         </div>
+        </div>
       </div>
-    </div>
-  </div>  
-
+    </div> 
   <br><br>
 
-  <div class="container" style="background-color: aquamarine;">
-    <ul class="nav nav-pills nav-justified">
-        <li class="row active"><a href="#">Education</a></li><hr>
-        <li><a href="#">Health</a></li><hr>
-        <li><a href="#">Livelihood</a></li><hr>
-        <li><a href="#">Women Empowerment</a></li><hr>
-    </ul>
+  <div class="container-fluid">      
+    <div class="row">
+        <table style="width:100%">
+            <th style="color: orangered;"><h3>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button" class="btn-2" data-toggle="modal" data-target="#myModal3">Education</button></a></h3></th>
+            <th style="color: orangered;"><h3>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button" class="btn-2" data-toggle="modal" data-target="#myModal1">Health</button></a></h3></th>
+            <th style="color: orangered;"><h3>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button"  data-toggle="modal" data-target="#myModal2" class="btn-2">Livelihood</button></a></h3></th>
+            <th style="color: orangered;"><h3>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button"  data-toggle="modal" data-target="#myModal3" class="btn-2">Empowerment</button></a></h3></th>
+        </table>
     </div>
-    <br>
-    <div class="container" style="background-color: darkorange;">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ul class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-      </ul>
-  
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{% static 'images/child5.png' %}" alt="" style="width:100%;">
+   </div>
+<br>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+            <div id="demo" class="carousel slide " data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                  <li data-target="#demo" data-slide-to="3"></li>
+                </ul>
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img style="border: 10px solid rgb(219, 176, 84);" src="{% static 'images/child8.jpeg' %}" width="150%" height="100px">
+                  </div>
+                  <div class="carousel-item">
+                    <img style="border: 10px solid rgb(224, 200, 92);" src="{% static 'images/ch1.jpeg' %}" width="150%" height="100px">
+                  </div>
+                  <div class="carousel-item">
+                    <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/child1.jpeg' %}" width="150%" height="100px">
+                  </div>
+                  <div class="carousel-item">
+                    <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/child10.jpeg' %}" width="150%" height="100px">
+                  </div>
+                  <div class="carousel-item">
+                    <img style="border: 10px solid rgb(209, 181, 104);" src="{% static 'images/child5.png' %}" width="150%" height="100px">
+                  </div>
+                  <!-- Left and right controls -->
+                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#demo" data-slide="next">
+                     <span class="carousel-control-next-icon"></span>
+                  </a>
+                </div>
+              </div>
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/welfare.png' %}" alt="" style="width:100%;">
+         <center><button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button></center>
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/health2.png' %}" alt="" style="width:100%;">
-        </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/women1.png' %}" alt="" style="width:100%;">
-        </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/child2.png' %}" alt="" style="width:100%;">
-        </div>
-      </div>
-  
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-         <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
+    </div> 
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+              <div id="demo" class="carousel slide " data-ride="carousel">
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                  </ul>
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img style="border: 10px solid rgb(219, 176, 84);" src="{% static 'images/health.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(224, 200, 92);" src="{% static 'images/heal.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/hel2.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/health1.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 181, 104);" src="{% static 'images/hel1.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                       <span class="carousel-control-next-icon"></span>
+                    </a>
+                  </div>
+                </div>
+          </div>
+           <center><button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button></center>
+          </div>
+      </div> 
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+              <div id="demo" class="carousel slide " data-ride="carousel">
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                  </ul>
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img style="border: 10px solid rgb(219, 176, 84);" src="{% static 'images/ch3.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(224, 200, 92);" src="{% static 'images/child4.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/ngo.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/hel1.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 181, 104);" src="{% static 'images/.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                       <span class="carousel-control-next-icon"></span>
+                    </a>
+                  </div>
+                </div>
+          </div>
+           <center><button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button></center>
+          </div>
+      </div> 
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+              <div id="demo" class="carousel slide " data-ride="carousel">
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                  </ul>
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img style="border: 10px solid rgb(219, 176, 84);" src="{% static 'images/women.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(224, 200, 92);" src="{% static 'images/work2.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/women2.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 171, 99);" src="{% static 'images/health2.png' %}" width="150%" height="100px">
+                    </div>
+                    <div class="carousel-item">
+                      <img style="border: 10px solid rgb(209, 181, 104);" src="{% static 'images/work.jpeg' %}" width="150%" height="100px">
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                       <span class="carousel-control-next-icon"></span>
+                    </a>
+                  </div>
+                </div>
+          </div>
+           <center><button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button></center>
+          </div>
+      </div> 
+      <br>
+<div class="items">
+  <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/child.jpeg' %}"> </div>
+      
   </div>
-</div>  
+  <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/work2.jpeg' %}"> </div>
+      
+  </div>
+  <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/hel1.jpeg' %}"> </div>
+     
+  </div>
+  <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/health.png' %}"> </div>
+     
+  </div>
+  <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/serve.jpeg' %}"> </div>
+  </div> 
+  <div class="card">
+    <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/heal.jpeg' %}"> </div>
+</div> 
+<div class="card">
+  <div class="media media-2x1 gd-primary"> <img class="profile-image" src="{% static 'images/ch4.jpeg' %}"> </div>
+</div> 
+</div>
+
+<br>
+<script>
+  $(document).ready(function(){
+
+    $('.items').slick({
+    dots: true,
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+    {
+    breakpoint: 1024,
+    settings: {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: true,
+    dots: true
+    }
+    },
+    {
+    breakpoint: 600,
+    settings: {
+    slidesToShow: 2,
+    slidesToScroll: 2
+    }
+    },
+    {
+    breakpoint: 480,
+    settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+    }
+    }
+    
+    ]
+    });
+    });
+</script>
       </body>
     </html>
     {% endblock %}

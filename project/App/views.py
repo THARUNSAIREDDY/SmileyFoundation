@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from App.forms import RegForm,ChpwdForm,UpPrf,Details
+from App.forms import RegForm,ChpwdForm,UpPrf,Details,Worker
 from django.contrib.auth.decorators import login_required
-from App.models import User,Category,Events,Gallary,Form
+from App.models import User,Category,Events,Gallary,Form,Dash,Work
 from django.core.mail import send_mail
 from project import settings
 from django.contrib import messages
@@ -91,8 +91,28 @@ def user(request):
 	u= Details()
 	return render(request,'html/add_details.html',{'e':u})
 
+def worker(request):
+	if request.method =="POST":
+		w=Worker(request.POST)
+		if w.is_valid():
+			w.save()
+			return redirect('/')
+	w= Worker()
+	return render(request,'html/worker.html',{'e':w})
+
+def worker_details(request):
+	d=Work.objects.all()
+	return render(request,'html/worker_details.html',{'dest':d})
+
+@login_required
 def donate(request):
 	return render(request,'html/donate.html')
 
+@login_required
 def form(request):
 	return render(request,'html/form.html')
+
+
+def details(request):
+	dest=Dash.objects.all()
+	return render(request,'html/details.html',{"dest":dest})

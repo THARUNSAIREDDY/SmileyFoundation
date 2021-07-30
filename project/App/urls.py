@@ -24,5 +24,7 @@ urlpatterns = [
 	path('donate/',views.donate,name="donate"),
 	path('form/',views.form,name="form"),
 	path('view/',views.view,name="view"),
-
-    ]
+	path('details/',views.details,name="details"),
+	path('worker/',views.worker,name="worker"),
+	path('worker_details/',views.worker_details,name="worker_details"),
+]

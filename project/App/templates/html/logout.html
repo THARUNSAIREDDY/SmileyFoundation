@@ -4,11 +4,40 @@
 <br>
 <br><br>
 <br><br>
-<div class="container">
-	<div class="card col-md-4 mx-auto  shadow-lg">
-		<div class="card-body mx-auto">
-		    <a href="{% url 'lgo' %}" class="form-contol btn btn-info ">Login</a>
+<br><br>
+<html>
+	<style>
+		body{
+			background-color: rgb(195, 220, 236);
+		}
+		.container .row a{
+				padding: 6rem 28rem;
+				color: #fff;
+				border: none;
+				border-radius: 10px;
+			}
+			.container .row h2
+			{
+				padding: 1rem 19rem;
+				color: black;
+			}
+			.btn-1{
+				background-color: orangered;
+				padding: 1.5rem 4rem;
+				color: #fff;
+				border: none;
+				border-radius: 10px;
+			}
+	</style>
+	<body>
+		<div class="container">
+			<div class="row">
+				<center><h2>Successfully Logged Out<br><br>
+				You need to Login again click here..!!! </h2><br></center>
+				<center><a href="{% url 'lgo' %}"><button class="btn-1">Login Here</button></a></center>
+					
+			</div>
 		</div>
-	</div>
-</div>
+	</body>
+</html>
 {% endblock %}

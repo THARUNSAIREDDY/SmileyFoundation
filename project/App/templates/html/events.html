@@ -1,17 +1,18 @@
 {% extends 'html/header.html' %}
-{% block title %} Events {% endblock %}
 {% block content %}
 {% load static %}
 
-<div class="bg-image" 
-   style="background-image: url('https://cdn.hipwallpaper.com/i/52/74/QEP83w.jpg');
-   height: 100%">
-
+<style>
+   body{
+      background-color: cornsilk;
+   }
+</style>
+<br>
 <section class="text-center">
-   <h3 class="mb-5 text-white" ><strong>Children in Our NGO</strong></h3>
+   <h3 class="mb-5 text-black" ><strong>Children in Our NGO</strong></h3>
    <div class="row">
    {% for dest in dest %}
-   <div class="col-lg-4 col-md-12 mb-4">
+   <div class="col-lg-3 col-md-12 mb-5">
       <div class="card">
          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
             <img src="{{dest.img.url}}" class="img-fluid" class="rounded" alt="Cinque Terre" width="304" height="236" />

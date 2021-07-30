@@ -1,0 +1,35 @@
+{% extends 'html/header.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+	body{
+		background-color: cornsilk;
+	}
+</style>
+<br>
+<section class="text-center">
+   <h3 class="mb-5 text-black" ><strong>Worker_Details</strong></h3>
+   <div class="row">
+   {% for i in dest %}
+   <div class="col-lg-3 col-md-12 mb-5">
+      <div class="card">
+         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{dest.img.url}}" class="img-fluid" class="rounded" alt="Cinque Terre" width="304" height="236" />
+            <a href="#!">
+               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+         </div>
+         <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">
+				{{i.email}}
+				{{i.phoneno}}	
+            {{i.des}}
+            </p>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
+</section>
+{% endblock %}

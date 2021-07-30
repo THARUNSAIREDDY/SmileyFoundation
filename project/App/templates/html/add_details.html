@@ -9,26 +9,21 @@ body {
 }
 </style>
 
-<div class="container">
-	<div class="row">
-
-		<div class="card center col-md-4  mx-auto my-3 shadow lg h-25">
-			<h3 class="p-3 bg-primary text-center text-white mt-3 border rounded">Add Details</h3>
-			<form method="POST" enctype="multipart/form-data">
+<div class="container mt-5">
+	<div class="card mx-auto col-md6 shadow-lg">
+		<div class="card-body">
+			<h3 class="bg-info text-center text-light p-2 border rounded">User Deatils</h3>
+			<form method="POST">
 				{% csrf_token %}
 				{% for n in e %}
 				<tr>
 					<td>{{n}}</td>
 				</tr>
 				{% endfor %}
-				<input type="submit" value="create" class="form-control my-2 col-sm btn btn-success">
+				<input type="submit" value="Submit" class="btn btn-success">
+			</form>
 		</div>
-		
-				</td>
-			
-	
-</div>
-</div>
+	</div>
 </div>
 
 {% endblock %}

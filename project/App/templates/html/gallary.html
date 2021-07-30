@@ -1,12 +1,13 @@
 {% extends 'html/header.html' %}
 {% block title %}Gallary{% endblock %}
 {% block content %}
-
-<!-- Gallery -->
-<div class="bg-image" 
-   style="background-image: url('https://cdn.pixabay.com/photo/2018/02/03/08/00/background-3127102__340.jpg');
-   height: 100%">
-<!-- Page Content -->
+<html>
+<style>
+   body{
+      background-color: rgba(223, 158, 37, 0.89);
+   }
+</style>
+<body>
 <div class="container" >
    <h1 class="font-weight-light text-center text-white text-lg-left mt-4 mb-0">Our Gallery</h1>
    <hr class="mt-2 mb-5">
@@ -22,4 +23,6 @@
    </div>
 </div>
 <!-- /.container -->
+</body>
+</html>
 {% endblock %}

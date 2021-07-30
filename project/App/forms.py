@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm,PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
-from App.models import User,Category,Gallary,Events,Form
+from App.models import User,Category,Gallary,Events,Form,Work
 
 class RegForm(UserCreationForm):
 	password1=forms.CharField(widget=forms.PasswordInput(attrs={
@@ -54,14 +54,15 @@ class Details(forms.ModelForm):
 	
 	class Meta:
 		model= Form
-		fields = ["first_name","last_name","image","email","fathername","fatheroccupation","age","gender","aadharno","phno","address","city","state","pin"]
+		fields = ["first_name","last_name","age","image","email","study","gender","aadharno","phno","fathername","fatheroccupation","address","city","state","pin"]
 		widgets = {
 		"first_name":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Enter your First name "}),
 		"last_name":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Enter your Last name "}),
+		"age":forms.NumberInput(attrs={"class":"form-control","placeholder":"Enter  your age:",}),
 		"email":forms.EmailInput(attrs={"class":"form-control my-2","placeholder":"Enter your Email"}),
+		"study":forms.Select(attrs={"class":"form-control my-2","placeholder":"select your qualification"}),
 		"fathername":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Enter your Father name "}),
 		"fatheroccupation":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Enter Father's occupation"}),
-		"age":forms.NumberInput(attrs={"class":"form-control","placeholder":"update age",}),
 		"gender":forms.Select(attrs={"class":"form-control","placeholder":"Select your gender",}),
 		"aadharno":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Aadhar number"}),
 		"phno":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Phone number"}),
@@ -69,4 +70,19 @@ class Details(forms.ModelForm):
 		"city":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"city"}),
 		"state":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"state"}),
 		"pin":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Pincode"}),
+		}
+
+class Worker(forms.ModelForm):
+	
+	class Meta:
+		model= Work
+		fields = ["name","age","email","qualification","img","gender","phno","address"]
+		widgets = {
+		"name":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Enter your Name "}),
+		"age":forms.NumberInput(attrs={"class":"form-control","placeholder":"Enter  your age:",}),
+		"email":forms.EmailInput(attrs={"class":"form-control my-2","placeholder":"Enter your Email"}),
+		"gender":forms.Select(attrs={"class":"form-control","placeholder":"Select your gender",}),
+		"qualification":forms.Select(attrs={"class":"form-control","placeholder":"Select your Qualification",}),
+		"phno":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"Phone number"}),
+		"address":forms.TextInput(attrs={"class":"form-control my-2","placeholder":"address"}),
 		}
